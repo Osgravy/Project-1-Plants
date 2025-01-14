@@ -1,15 +1,20 @@
 :root {
+    /* Color Variables */
+
     --textDark: #421a14;
     --textLight: #DBD5D0;
-    --titleBackground: #b4ccc5;
-    --titleBorder: #338265;
-    --mainBackground: #c25e6d;
-    --mainBorder: #e6c6c1;
+    --titleBackground: #338265;
+    --titleBorder: #b4ccc5;
+    --mainBackground: #e6c6c1;
+    --mainBorder: #c25e6d;
     --formBackground: #1bad85;
-    --forBorder: #bae8d7;
+    --formBorder: #bae8d7;
+
+    /* Formatting Variables */
+    --borderRadius: .5rem;
 }
 
-body, h1, h2, p, ul {
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -25,76 +30,59 @@ body {
 
 
 header {
-    background: linear-gradient(90deg, #052231, #4b9cd3);
-    color: white;
+    font-family: 'Helvetica';
+    background: var(--titleBackground);
+    border: .3rem solid var(--titleBorder);
+    color: var(--textLight);
     padding: 20px 0;
     text-align: center;
+    border-radius: var(--borderRadius);
 }
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 
 main {
     padding: 20px;
 }
 
 section {
-    background: #ffffff;
     margin: 20px 0;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    text-align: center;
 }
+
+
 
 section:hover {
     transform: scale(1.02);
 }
 
 
-h1, h2 {
+h1 {
     text-align: center;
     margin-bottom: 10px;
 }
 
-h1 {
-    font-size: 2.5em;
+h2 {
+    text-align: center;
 }
-
 
 footer {
+    border: .3rem solid var(--titleBorder);
     text-align: center;
     padding: 10px 0;
-    background: #2a607c;
-    color: white;
+    background: var(--titleBackground);
+    color: var(--textLight);
+    border-radius: var(--borderRadius);
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+.contentMain {
+    background: var(--mainBackground);
+    border: .3rem solid var(--mainBorder);
+    color: var(--textDark);
+}
 
-    nav ul li {
-        margin: 10px 0;
-    }
+.boldText{
+    font-weight: bold;
 }
