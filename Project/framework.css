@@ -1,3 +1,14 @@
+:root {
+    --textDark: #421a14;
+    --textLight: #DBD5D0;
+    --titleBackground: #b4ccc5;
+    --titleBorder: #338265;
+    --mainBackground: #c25e6d;
+    --mainBorder: #e6c6c1;
+    --formBackground: #1bad85;
+    --forBorder: #bae8d7;
+}
+
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
@@ -48,7 +59,7 @@ main {
 }
 
 section {
-    background: white;
+    background: #ffffff;
     margin: 20px 0;
     padding: 20px;
     border-radius: 10px;
