@@ -4,39 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href = "framework.css">
-    <title>Project</title>
+    <title>Project 1</title>
 </head>
 <body>
     <header>
-        <h1>Project or something</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Taking Care of House Plants</h1>
+        
     </header>
     
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>Website stuff...</p>
+            <h2>Contents of this Page</h2>
+            <p>You will be able to determine the amount of water for specific house plant along with type of light and temperature for maximum growth.</p>
         </section>
         
-        <section id="portfolio">
-            <h2>My Work</h2>
-            <p>More website stuff....</p>
         </section>
-        
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>EVEN MORE website stuff.....</p>
+        <section>
+            <form action="process_form.php" method="post">
+
+                <label for="Plant">Type of Plant:</label>
+            
+                <input type="text" id="name" name="plant"><br>
+            
+                
+            
+                <label for="temperature">Temperature:</label>
+            
+                <input type="text" id="temp" name="temperature"><br>
+
+                <label for="light source">Light Source:</label>
+            
+                <input type="text" id="light" name="light source"><br>
+            
+            
+                <input type="submit" value="Submit">
+            
+            </form>
         </section>
     </main>
     
     <footer>
-        <p> Cool ass footer.</p>
+        <p> Enjoy Your Plants</p>
     </footer>
 
     <script src="script.js"></script>
