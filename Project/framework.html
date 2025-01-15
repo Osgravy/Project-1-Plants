@@ -4,37 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href = "framework.css">
-    <title>Project 1</title>
+    <title>Personal Watering Assistant</title>
 </head>
 <body>
     <header>
-        <h1>Taking Care of House Plants</h1>
+        <h1>Hello Friend!</h1>
         
     </header>
     
     <main>
-        <section id="about">
-            <h2>Contents of this Page</h2>
-            <p>You will be able to determine the amount of water for specific house plant along with type of light and temperature for maximum growth.</p>
-            <p>The type of plants consist of cactus, tropical, epiphyte and temperate.</p>
+        <section class = "contentMain">
+            <h2>I'm your houseplant watering assistant!</h2>
+            <br>
+            <p>All you have to do is tell me what plant type you have, 
+                how much light your plant receives (measured in lux),
+                 and the temperature of your room (measured in Farenheit), 
+                and I'll give you a watering schedule.</p>
+            <br>    
+            <p class = "boldText" >I'm compatible with the following plant types:</p>
+            <ul>
+                <li>Cacti</li>
+                <li>Tropicals</li>
+                <li>Orchids</li>
+                <li>Temperates</li>
+            </ul>
         </section>
-        
-        </section>
-        <section>
-            
-            <form id ='myForm' action="process_form.php" method="post">
 
-                <label for="Plant">Type of Plant:</label>
-            
-                <input type="text" id="name" name="plant"><br>
-            
-                <label for="temperature">Temperature:</label>
-            
-                <input type="text" id="temp" name="temperature"><br>
 
-                <label for="light source">Light Source:</label>
+                <label for="plant">Plant Type:</label>
             
-                <input type="text" id="light" name="light source"><br>
+                <input name="plant"><br>
+            
+                <label for="temperature">Room Temperature:</label>
+            
+                <input name="temperature"><br>
+
+                <label for="light source">Light Amount:</label>
+            
+                <input name="light amount"><br>
             
                 <input type="submit" value="Submit">
             
@@ -46,7 +53,7 @@
     </main>
     
     <footer>
-        <h3> Enjoy Your Plants!</h3>
+        <h3>Happy Watering!</h3>
     </footer>
 
     <script src="script.js"></script>
