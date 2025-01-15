@@ -5,55 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href = "framework.css">
     <title>Personal Watering Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
 </head>
 <body>
-    <header>
-        <h1>Hello Friend!</h1>
-        
+    <header class="bg-gradient-to-r from-[#338265] to-[#1bad85] border-[0.3rem] border-[#bae8d7] rounded-lg">
+        <h1 class="text-5xl font-extrabold text-center py-1 text-[#DBD5D0]">Hello Friend!</h1>
     </header>
     
     <main>
-        <section class = "contentMain">
-            <h2>I'm your houseplant watering assistant!</h2>
-            <br>
-            <p>All you have to do is tell me what plant type you have, 
+        <section class="contentMain p-8 max-w-2xl mx-auto rounded-xl shadow-lg">
+            <!-- Title -->
+            <h2 class="text-3xl font-bold text-[#338265] mb-6">
+                I'm your houseplant watering assistant! 🌿
+            </h2>
+        
+            <!-- Description -->
+            <p class="text-lg leading-relaxed mb-8 text-gray-700">
+                All you have to do is tell me what plant type you have, 
                 how much light your plant receives (measured in lux),
-                 and the temperature of your room (measured in Farenheit), 
-                and I'll give you a watering schedule.</p>
-            <br>    
-            <p class = "boldText" >I'm compatible with the following plant types:</p>
-            <ul>
-                <li>Cacti</li>
-                <li>Tropicals</li>
-                <li>Orchids</li>
-                <li>Temperates</li>
-            </ul>
+                and the temperature of your room (measured in Fahrenheit), 
+                and I'll give you a watering schedule.
+            </p>
+        
+            <!-- Plant types section -->
+            <div class="bg-[#e6c6c1]/20 p-6 rounded-lg">
+                <p class="font-bold text-xl mb-4 text-[#421a14]">
+                    I'm compatible with the following plant types:
+                </p>
+                <ul class="grid grid-cols-2 gap-4">
+                    <li class="flex items-center space-x-2 text-lg">
+                        <span class="text-[#338265]">🌵</span>
+                        <span>Cacti</span>
+                    </li>
+                    <li class="flex items-center space-x-2 text-lg">
+                        <span class="text-[#338265]">🌴</span>
+                        <span>Tropicals</span>
+                    </li>
+                    <li class="flex items-center space-x-2 text-lg">
+                        <span class="text-[#338265]">🌸</span>
+                        <span>Orchids</span>
+                    </li>
+                    <li class="flex items-center space-x-2 text-lg">
+                        <span class="text-[#338265]">🌿</span>
+                        <span>Temperates</span>
+                    </li>
+                </ul>
+            </div>
         </section>
        
-        <section class = "contentMain">
-            <form action="process_form.php" method="post">
-
-                <label for="plant">Plant Type:</label>
-            
-                <input  id=plant name="plant"><br>
-            
-                <label for="temperature">Room Temperature:</label>
-            
-                <input id=temperature name="temperature"><br>
-
-                <label for="light source">Light Amount:</label>
-            
-                <input  id=lightSource name="light amount"><br>
-            
+        <section class="contentMain p-6">
+            </div>
+            <form action="process_form.php" method="post" class="max-w-md mx-auto space-y-6">
+                <!-- Plant Type Input Group -->
+                <div class="flex flex-col">
+                    <label for="plant" class="text-[#421a14] font-semibold mb-2">
+                        Plant Type:
+                    </label>
+                    <input 
+                        name="plant" 
+                        id="plant"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
+                    >
+                </div>
+        
+                <!-- Room Temperature Input Group -->
+                <div class="flex flex-col">
+                    <label for="temperature" class="text-[#421a14] font-semibold mb-2">
+                        Room Temperature:
+                    </label>
+                    <input 
+                        name="temperature" 
+                        id="temperature"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
+                    >
+                </div>
+        
+                <!-- Light Amount Input Group -->
+                <div class="flex flex-col">
+                    <label for="light-source" class="text-[#421a14] font-semibold mb-2">
+                        Light Amount:
+                    </label>
+                    <input 
+                        name="light amount" 
+                        id="light-source"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
+                    >
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="text-center mt-8">
+                    <button type="submit" class="bg-[#338265] hover:bg-[#1bad85] text-white font-bold py-2 px-7 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 border-2 border-[#bae8d7]">
+                        Submit
+                    </button>
+                </div>
             </form>
-                <button id=button  value="Submit">Submit</button>
+
+            
         </section>
+
     </main>
     
     <footer>
         <h3>Happy Watering!</h3>
     </footer>
 
-    <script src="./framework.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
