@@ -1,0 +1,88 @@
+:root {
+    /* Color Variables */
+
+    --textDark: #421a14;
+    --textLight: #DBD5D0;
+    --titleBackground: #338265;
+    --titleBorder: #b4ccc5;
+    --mainBackground: #e6c6c1;
+    --mainBorder: #c25e6d;
+    --formBackground: #1bad85;
+    --formBorder: #bae8d7;
+
+    /* Formatting Variables */
+    --borderRadius: .5rem;
+}
+
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+header {
+    font-family: 'Helvetica';
+    background: var(--titleBackground);
+    border: .3rem solid var(--titleBorder);
+    color: var(--textLight);
+    padding: 20px 0;
+    text-align: center;
+    border-radius: var(--borderRadius);
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: var(--borderRadius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+
+
+section:hover {
+    transform: scale(1.02);
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
+footer {
+    border: .3rem solid var(--titleBorder);
+    text-align: center;
+    padding: 10px 0;
+    background: var(--titleBackground);
+    color: var(--textLight);
+    border-radius: var(--borderRadius);
+}
+
+.contentMain {
+    background: var(--mainBackground);
+    border: .3rem solid var(--mainBorder);
+    color: var(--textDark);
+}
+
+.boldText{
+    font-weight: bold;
+}

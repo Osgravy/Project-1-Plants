@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "framework.css">
+    <title>Personal Watering Assistant</title>
+</head>
+<body>
+    <header>
+        <h1>Hello Friend!</h1>
+        
+    </header>
+    
+    <main>
+        <section class = "contentMain">
+            <h2>I'm your houseplant watering assistant!</h2>
+            <br>
+            <p>All you have to do is tell me what plant type you have, 
+                how much light your plant receives (measured in lux),
+                 and the temperature of your room (measured in Farenheit), 
+                and I'll give you a watering schedule.</p>
+            <br>    
+            <p class = "boldText" >I'm compatible with the following plant types:</p>
+            <ul>
+                <li>Cacti</li>
+                <li>Tropicals</li>
+                <li>Orchids</li>
+                <li>Temperates</li>
+            </ul>
+        </section>
+       
+        <section class = "contentMain">
+            <form action="process_form.php" method="post">
+
+                <label for="plant">Plant Type:</label>
+            
+                <input  id=plant name="plant"><br>
+            
+                <label for="temperature">Room Temperature:</label>
+            
+                <input id=temperature name="temperature"><br>
+
+                <label for="light source">Light Amount:</label>
+            
+                <input  id=lightSource name="light amount"><br>
+            
+            </form>
+                <button id=button  value="Submit">Submit</button>
+        </section>
+    </main>
+    
+    <footer>
+        <h3>Happy Watering!</h3>
+    </footer>
+
+    <script src="./framework.js"></script>
+</body>
+</html>
