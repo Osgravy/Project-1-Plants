@@ -4,29 +4,42 @@ function showWateringSchedule() {
     let plant = document.querySelector("#plant").value.trim().toLowerCase();
 
     //collect info in box 2
-    let temperature = document.querySelector("#temperature").value;
+    let temperature = parseFloat(document.querySelector("#temperature").value);
 
     //collect box 3
-    let lightSource = document.querySelector("#lightSource").value;
+    let lightSource = parseFloat(document.querySelector("#lightSource").value);
     
     //creates set of valid plants
     let validPlants = ["cactus", "tropical", "orchid", "shade"]
 
+    //creates a display on the page instead of an alert
+    let waterDisplay = document.getElementById("waterDisplay")
+
     console.log(plant, temperature, lightSource)
     
-    //logs any user errors
+    //empty box error
     if(!plant || !temperature || !lightSource){
-        alert("Please fill out all the boxes!");
-    }else if(!plant && temperature && lightSource){
-        alert("Please add a plant type!");
-    }else if(plant && !temperature && lightSource){
-        alert("Please add a temperature value!");
-    }else if(plant && temperature && !lightSource){
-        alert("Please add a light value!")
-    }else if(plant && isNaN(temperature) || isNaN(lightSource)){
-        alert("Light and temperature values must be a number!")
-    }else if(!validPlants.includes(plant) && temperature && lightSource){
-        alert(`That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`)
+        waterDisplay.textContent = "Please fill out all the boxes!";
+    }
+    //no plant
+    else if(!plant && temperature && lightSource){
+        waterDisplay.textContent = "Please add a plant type!";
+    }
+    //no temperature
+    else if(plant && !temperature && lightSource){
+        waterDisplay.textContent = "Please add a temperature value!";
+    }
+    //no light
+    else if(plant && temperature && !lightSource){
+        waterDisplay.textContent = "Please add a light value!";
+    }
+    //non-number value for light or temperature
+    else if(isNaN(temperature) || isNaN(lightSource)){
+        waterDisplay.textContent = "Light and temperature values must be a number!";
+    }
+    //invalid plant type
+    else if(!validPlants.includes(plant) && temperature && lightSource){
+        waterDisplay.textContent = `That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`
     }
 
     //create watering schedule
@@ -82,7 +95,7 @@ function showWateringSchedule() {
         schedule = "Your shade plant is getting too much light!!! Make sure it's getting less than 10,000 lux.";
     }
 
-    alert(`${schedule}`);
+    waterDisplay.textContent =(`${schedule}`);
     }
 
     
