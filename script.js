@@ -19,11 +19,6 @@ function showWateringSchedule() {
     console.log(validPlants)
     console.log(waterDisplay)
     
-    //empty box error
-    if(!plant || !temperature || !lightSource){
-        waterDisplay.textContent = "Please fill out all the boxes!";
-        return;
-    }
     //non-number value for light or temperature
     if(isNaN(temperature) || isNaN(lightSource)){
         waterDisplay.textContent = "Light and temperature values must be a number!";
@@ -32,6 +27,12 @@ function showWateringSchedule() {
     //invalid plant type
     if(!validPlants.includes(plant) && temperature && lightSource){
         waterDisplay.textContent = `That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`;
+        return;
+    }
+
+       //empty box error
+       if(!plant || !temperature || !lightSource){
+        waterDisplay.textContent = "Please fill out all the boxes!";
         return;
     }
 
