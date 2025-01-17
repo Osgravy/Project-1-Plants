@@ -13,33 +13,26 @@ function showWateringSchedule() {
     let validPlants = ["cactus", "tropical", "orchid", "shade"]
 
     //creates a display on the page instead of an alert
-    let waterDisplay = document.getElementById("waterDisplay")
+    const waterDisplay = document.getElementById("waterDisplay")
 
     console.log(plant, temperature, lightSource)
+    console.log(validPlants)
+    console.log(waterDisplay)
     
     //empty box error
     if(!plant || !temperature || !lightSource){
         waterDisplay.textContent = "Please fill out all the boxes!";
-    }
-    //no plant
-    else if(!plant && temperature && lightSource){
-        waterDisplay.textContent = "Please add a plant type!";
-    }
-    //no temperature
-    else if(plant && !temperature && lightSource){
-        waterDisplay.textContent = "Please add a temperature value!";
-    }
-    //no light
-    else if(plant && temperature && !lightSource){
-        waterDisplay.textContent = "Please add a light value!";
+        return;
     }
     //non-number value for light or temperature
-    else if(isNaN(temperature) || isNaN(lightSource)){
+    if(isNaN(temperature) || isNaN(lightSource)){
         waterDisplay.textContent = "Light and temperature values must be a number!";
+        return;
     }
     //invalid plant type
-    else if(!validPlants.includes(plant) && temperature && lightSource){
-        waterDisplay.textContent = `That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`
+    if(!validPlants.includes(plant) && temperature && lightSource){
+        waterDisplay.textContent = `That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`;
+        return;
     }
 
     //create watering schedule
