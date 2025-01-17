@@ -18,7 +18,7 @@ function showWateringSchedule() {
     console.log(plant, temperature, lightSource)
     console.log(validPlants)
     console.log(waterDisplay)
-    
+  
     //non-number value for light or temperature
     if(isNaN(temperature) || isNaN(lightSource)){
         waterDisplay.textContent = "Light and temperature values must be a number!";
@@ -29,13 +29,11 @@ function showWateringSchedule() {
         waterDisplay.textContent = `That's not a valid plant! Please choose from the following: ${validPlants.join(", ")}.`;
         return;
     }
-
-       //empty box error
-       if(!plant || !temperature || !lightSource){
+  //empty box error
+    if(plant === "" || temperature === "" || lightSource === ""){
         waterDisplay.textContent = "Please fill out all the boxes!";
         return;
     }
-
     //create watering schedule
     let schedule = ""
 
