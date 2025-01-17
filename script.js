@@ -88,6 +88,12 @@ function showWateringSchedule() {
     }
 
     waterDisplay.textContent =(`${schedule}`);
+
+    localStorage.setItem('plant', plant);
+    localStorage.setItem('temperature', temperature);
+    localStorage.setItem('light source', lightSource);
+    localStorage.setItem('schedule', schedule);
+
     }
 
     
