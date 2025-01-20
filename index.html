@@ -1,118 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href = "style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Watering Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
 
 </head>
+
 <body>
     <header class="bg-gradient-to-r from-[#338265] to-[#1bad85] border-[0.3rem] border-[#bae8d7] rounded-lg">
         <h1 class="text-5xl font-extrabold text-center py-1 text-[#DBD5D0]">Hello Friend!</h1>
     </header>
-    
+
     <main>
         <section class="contentMain p-8 max-w-2xl mx-auto rounded-xl shadow-lg">
             <!-- Title -->
             <h2 class="text-3xl font-bold text-[#338265] mb-6">
-                I'm your houseplant watering assistant! 🌿
+                I'm your houseplant watering assistant!
             </h2>
-        
+
             <!-- Description -->
             <p class="text-lg leading-relaxed mb-8 text-gray-700">
-                All you have to do is tell me what plant type you have, 
+                All you have to do is tell me what plant type you have,
                 how much light your plant receives (measured in lux),
-                and the temperature of your room (measured in Fahrenheit), 
+                and the temperature of your room (measured in Fahrenheit),
                 and I'll give you a watering schedule.
             </p>
-        
+
             <!-- Plant types section -->
             <div class="bg-[#e6c6c1]/20 p-6 rounded-lg">
                 <p class="font-bold text-xl mb-4 text-[#421a14]">
                     I'm compatible with the following plant types:
                 </p>
                 <ul class="grid grid-cols-2 gap-4">
-                    <li class="flex items-center space-x-2 text-lg">
+                    <li class="flex items-center space-x-2 text-lg justify-center">
                         <span class="text-[#338265]">🌵</span>
                         <span>Cactus</span>
                     </li>
-                    <li class="flex items-center space-x-2 text-lg">
+                    <li class="flex items-center space-x-2 text-lg justify-center">
                         <span class="text-[#338265]">🌴</span>
                         <span>Tropical</span>
                     </li>
-                    <li class="flex items-center space-x-2 text-lg">
+                    <li class="flex items-center space-x-2 text-lg justify-center">
                         <span class="text-[#338265]">🌸</span>
                         <span>Orchid</span>
                     </li>
-                    <li class="flex items-center space-x-2 text-lg">
+                    <li class="flex items-center space-x-2 text-lg justify-center">
                         <span class="text-[#338265]">🌿</span>
                         <span>Shade</span>
                     </li>
                 </ul>
             </div>
         </section>
-       
-        <section class="contentMain p-6">
-            
+
+        <section class="contentMain p-6 max-w-2xl mx-auto">
+
             <form action="process_form.php" method="post" class="max-w-md mx-auto space-y-6">
                 <!-- Plant Type Input Group -->
                 <div class="flex flex-col">
                     <label for="plant" class="text-[#421a14] font-semibold mb-2">
                         Plant Type:
                     </label>
-                    <input 
-                        name="plant" 
-                        id="plant"
-                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
-                    >
+                    <input name="plant" id="plant"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none">
                 </div>
-        
+
                 <!-- Room Temperature Input Group -->
                 <div class="flex flex-col">
                     <label for="temperature" class="text-[#421a14] font-semibold mb-2">
                         Room Temperature:
                     </label>
-                    <input 
-                        name="temperature" 
-                        id="temperature"
-                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
-                    >
+                    <input name="temperature" id="temperature"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none">
                 </div>
-        
+
                 <!-- Light Amount Input Group -->
                 <div class="flex flex-col">
                     <label for="lightSource" class="text-[#421a14] font-semibold mb-2">
                         Light Amount:
                     </label>
-                    <input 
-                        name="light amount" 
-                        id="lightSource"
-                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none"
-                    >
+                    <input name="light amount" id="lightSource"
+                        class="border-2 border-[#bae8d7] rounded-lg p-2 focus:border-[#338265] focus:outline-none">
                 </div>
-        
+
                 <!-- Submit Button -->
                 <div class="text-center mt-8">
-                    
+
                 </div>
             </form>
 
-            <button type="submit" class="bg-[#338265] hover:bg-[#1bad85] text-white font-bold py-2 px-7 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 border-2 border-[#bae8d7]" id="button">
-                        Submit
+            <button type="submit"
+                class="bg-[#338265] hover:bg-[#1bad85] text-white font-bold py-2 px-7 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 border-2 border-[#bae8d7]"
+                id="button">
+                Submit
+            </button>
+
+            <!--Watering Schedule Display-->
+            <div id="waterDisplay"
+                class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#338265] mb-4">Here's your watering schedule!</h3>
+                    <p id="waterMessage" class="text-gray-700 mb-6"></p>
+                    <button id="closeWater"
+                        class="bg-[#338265] hover:bg-[#1bad85] text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        Close
                     </button>
-                <!--Watering schedule-->
-                <div id="waterDisplay" class="mt-8 text-center text-lg font-semibold text-[#338265]"></div>
+                </div>
+            </div>
+
+            <!--Error Message Display-->
+            <div id="errorDisplay"
+                class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white p-6 rounded-lg max-w-md w-full text-center shadow-lg">
+                    <h3 class="text-2xl font-bold text-[#338265] mb-4">ERROR!</h3>
+                    <p id="errorMessage" class="text-gray-700 mb-6"></p>
+                    <button id="closeError"
+                        class="bg-[#338265] hover:bg-[#1bad85] text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                        Close
+                    </button>
+                </div>
+            </div>
+
         </section>
 
     </main>
-    
+
     <footer>
         <h3>Happy Watering!</h3>
     </footer>
 
-    <script src="./script.js"></script>
+
 </body>
+<script src="./script.js"></script>
+
 </html>
