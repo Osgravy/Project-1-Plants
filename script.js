@@ -115,12 +115,11 @@ function showWateringSchedule() {
         waterDisplay.classList.remove("hidden");
     }
 
+
     localStorage.setItem('plant', plant);
     localStorage.setItem('temperature', temperature);
     localStorage.setItem('light source', lightSource);
 }
-
-
 
 
 //add an event listener that listens for the submit of that form and the runs the 
