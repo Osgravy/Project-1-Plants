@@ -115,7 +115,11 @@ function showWateringSchedule() {
         waterDisplay.classList.remove("hidden");
     }
 
+    localStorage.setItem('plant', plant);
+    localStorage.setItem('temperature', temperature);
+    localStorage.setItem('light source', lightSource);
 }
+
 
 
 
