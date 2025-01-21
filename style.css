@@ -14,7 +14,12 @@
     --borderRadius: .5rem;
 }
 
-body, h1, h2, h3, p, ul {
+body,
+h1,
+h2,
+h3,
+p,
+ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -26,13 +31,11 @@ body {
     line-height: 1.6;
     color: #333;
     min-height: 100vh;
-    background: linear-gradient(
-        -45deg,
-        var(--mainBackground),
-        var(--titleBorder),
-        var(--titleBackground),
-        var(--formBackground)
-    );
+    background: linear-gradient(-45deg,
+            var(--mainBackground),
+            var(--titleBorder),
+            var(--titleBackground),
+            var(--formBackground));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -41,9 +44,11 @@ body {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -104,6 +109,6 @@ footer {
     color: var(--textDark);
 }
 
-.boldText{
+.boldText {
     font-weight: bold;
 }
